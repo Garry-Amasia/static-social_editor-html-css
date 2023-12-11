@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
 }
+
 button {
   border: initial;
   background-color: initial;
@@ -11,12 +12,45 @@ button {
   font: inherit;
   outline: none; /*make sure there is a visual indicator for focus state */
 }
+
 .app {
   font-family: "Lato", sans-serif;
   font-size: 15px;
   color: white;
   height: 100vh;
   width: 100vw;
+  /* background-color: red; */
+}
+
+.app__container {
+  height: calc(100vh - 55px);
+  display: flex;
+  /* background-color: gold; */
+}
+
+/* KEYFRAMES */
+@keyframes fade-in-from-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fade-in-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 
 .header {
@@ -29,6 +63,7 @@ button {
   align-self: center;
   margin-left: 20px;
   margin-right: 30px;
+  animation: fade-in-from-top 0.5s;
 }
 
 .dd-toggle {
@@ -37,6 +72,7 @@ button {
   cursor: pointer;
   /* transition: color 0.4s, background-color 0.4s; */
   transition: all 0.4s;
+  animation: fade-in-from-top 0.5s;
 }
 
 .dd-toggle:hover {
@@ -73,4 +109,91 @@ button {
 }
 
 .dd-toggle__text {
+}
+
+/* ====================================== */
+.sidebar {
+  background-color: #10171a;
+  width: 75px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+.menu {
+  /* background-color: red; */
+  animation: fade-in-from-left 0.5s;
+}
+
+.menu__button {
+  padding: 19px 0;
+  color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  transition: all 0.6s;
+  /* animation: fade-in-from-left 0.5s; */
+}
+
+.menu__button:hover {
+  background-color: #2b363b;
+  color: white;
+  cursor: pointer;
+}
+
+.menu__button:focus {
+  background-color: #2b363b;
+  color: white;
+  cursor: pointer;
+}
+
+.menu__button--active {
+  background-color: #2b363b;
+  color: white;
+  position: relative;
+}
+
+.menu__button--active::before {
+  content: "";
+  width: 3px;
+  height: 100%;
+  background-color: #18a0be;
+  position: absolute;
+  left: 0px;
+  top: 0;
+}
+
+.menu__icon {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+.menu__text {
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.footer {
+  margin-top: auto;
+  margin-bottom: 60px;
+  transform: rotate(-90deg);
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* ====================================== */
+.panel {
+  background-color: #2b363c;
+  width: 350px;
+}
+
+/* ====================================== */
+.main {
+  background-color: #edf1f3;
+  flex: 1;
 }
